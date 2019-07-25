@@ -119,4 +119,15 @@
 .awayButtons__fieldGoal {
   margin: 1rem;
   border-radius: 4px;
+  width: 90%;
+  height: 125px;
+  margin: 5px;
+}
+
+.clearButtons{
+  margin: 1rem;
+  border-radius: 4px;
+  width: 90%;
+  height: 125px;
+  margin: 5px;
 }
