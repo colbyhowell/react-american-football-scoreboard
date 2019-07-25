@@ -8,64 +8,74 @@ function App() {
 
   const [lionsScore, addLionPoints] = useState(0)
   const [tigersScore, addTigersPoints] = useState(0)
+  const [currentQuarter, setCurrentQuarter] = useState(1)
+
 
   const addLionTouchdown = () => {
-    return addLionPoints(lionsScore + 6)
+    addLionPoints(lionsScore + 6)
   }
 
   const addLionExtraPoint = () => {
-    return addLionPoints(lionsScore + 1)
+    addLionPoints(lionsScore + 1)
   }
 
   const addLionFieldGoal = () => {
-    return addLionPoints(lionsScore + 3)
+    addLionPoints(lionsScore + 3)
   }
 
   const addTigerTouchdown = () => {
-    return addTigersPoints(tigersScore + 6)
+    addTigersPoints(tigersScore + 6)
   }
 
   const addTigerExtraPoint = () => {
-    return addTigersPoints(tigersScore + 1)
+    addTigersPoints(tigersScore + 1)
   }
 
   const addTigerFieldGoal = () => {
-    return addTigersPoints(tigersScore + 3)
+    addTigersPoints(tigersScore + 3)
   }
 
   // Removing scripts
 
   const subLionTouchdown = () => {
-    return addLionPoints(lionsScore - 6)
+    addLionPoints(lionsScore - 6)
   }
 
   const subLionExtraPoint = () => {
-    return addLionPoints(lionsScore - 1)
+    addLionPoints(lionsScore - 1)
   }
 
   const subLionFieldGoal = () => {
-    return addLionPoints(lionsScore - 3)
+    addLionPoints(lionsScore - 3)
   }
 
   const subTigerTouchdown = () => {
-    return addTigersPoints(tigersScore - 6)
+    addTigersPoints(tigersScore - 6)
   }
 
   const subTigerExtraPoint = () => {
-    return addTigersPoints(tigersScore - 1)
+    addTigersPoints(tigersScore - 1)
   }
 
   const subTigerFieldGoal = () => {
-    return addTigersPoints(tigersScore - 3)
+    addTigersPoints(tigersScore - 3)
   }
 
   // Clearing Scripts
   const clearAll = () => {
-    return (
-      lionsScore === 0,
-      tigersScore === 0
-    )
+      addLionPoints(0)
+      addTigersPoints(0)
   }
+
+      // Quarter Scripts
+
+      const quarterAdd = () => {
+        setCurrentQuarter(currentQuarter + 1)
+      }
+    
+      const quarterSub = () => {
+        setCurrentQuarter(currentQuarter - 1)
+      }
 
 
   return (
@@ -111,6 +121,8 @@ function App() {
         </div>
         <div>
           <button className="clearButtons" onClick={clearAll}>Clear All Scores</button>
+          <button className="clearButtons" onClick={quarterAdd}>Quarter +1</button>
+          <button className="clearButtons" onClick={quarterSub}>Quarter -1</button>
         </div>
       </section>
 
